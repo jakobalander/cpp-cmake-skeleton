@@ -13,7 +13,8 @@ if (PACKAGE_TESTS)
     add_subdirectory(external/googletest)
 
     add_executable(tests tests/unittests.cpp)
-    target_link_libraries(tests gtest gtest_main)
+    target_include_directories(tests PUBLIC include)
+    target_link_libraries(tests gtest gtest_main skeletonlib)
 
     include(GoogleTest)
     gtest_discover_tests(tests)

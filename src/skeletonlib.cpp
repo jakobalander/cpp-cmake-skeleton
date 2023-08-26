@@ -5,3 +5,7 @@
 void Skeleton::greeting() {
     std::cout << "greeting from cpp cmake skeleton" << std::endl;
 }
+
+std::string Skeleton::getString() {
+    return "Foo";
+}
