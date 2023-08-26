@@ -4,7 +4,7 @@
 
 class SkeletonFixture : public ::testing::Test {
     protected:
-        void SetUp() {
+        void SetUp() override {
             skel.setString("Bar");
         }
 
