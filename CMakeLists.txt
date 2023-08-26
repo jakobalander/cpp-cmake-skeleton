@@ -4,6 +4,21 @@ project(skeleton VERSION 1.0
     DESCRIPTION "cpp cmake skeleton"
     LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+option(PACKAGE_TESTS "Build the tests" ON)
+if (PACKAGE_TESTS)
+    enable_testing()
+    add_subdirectory(external/googletest)
+
+    add_executable(tests tests/unittests.cpp)
+    target_link_libraries(tests gtest gtest_main)
+
+    include(GoogleTest)
+    gtest_discover_tests(tests)
+endif()
+
 add_library(skeletonlib STATIC src/skeletonlib.cpp include/skeleton/lib.hpp)
 target_include_directories(skeletonlib PUBLIC include)
 target_compile_features(skeletonlib PUBLIC cxx_std_17)
