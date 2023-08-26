@@ -7,5 +7,11 @@ void Skeleton::greeting() {
 }
 
 std::string Skeleton::getString() {
-    return "Foo";
+    if (this->string == "")
+        return "Foo";
+    return this->string;
+}
+
+void Skeleton::setString(std::string str) {
+    this->string = str;
 }
