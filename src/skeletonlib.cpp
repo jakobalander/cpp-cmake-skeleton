@@ -15,3 +15,11 @@ std::string Skeleton::getString() {
 void Skeleton::setString(std::string str) {
     this->string = str;
 }
+
+
+Painter::Painter(TurtleIf& turtle) : turtle{turtle} {}
+
+bool Painter::drawLine(int x1, int y1, int x2, int y2) {
+    this->turtle.penDown();
+    return true;
+}

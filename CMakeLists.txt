@@ -14,7 +14,7 @@ if (PACKAGE_TESTS)
 
     add_executable(tests tests/unittests.cpp)
     target_include_directories(tests PUBLIC include)
-    target_link_libraries(tests gtest gtest_main skeletonlib)
+    target_link_libraries(tests gtest gtest_main gmock_main skeletonlib)
 
     include(GoogleTest)
     gtest_discover_tests(tests)
