@@ -1,5 +1,4 @@
-#ifndef SKELETON__LIB_HPP
-#define SKELETON__LIB_HPP
+#pragma once
 
 class Skeleton {
     public:
@@ -24,5 +23,3 @@ class Painter {
     private:
         TurtleIf& turtle;
 };
-
-#endif

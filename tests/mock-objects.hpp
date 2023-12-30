@@ -1,5 +1,4 @@
-#ifndef MOCK_OBJECTS_H
-#define MOCK_OBEJCTS_H
+#pragma once
 
 #include <gmock/gmock.h>
 
@@ -9,5 +8,3 @@ class MockTurtle : public TurtleIf {
     public:
         MOCK_METHOD(void, penDown, (), (override));
 };
-
-#endif
