@@ -20,10 +20,12 @@ if (PACKAGE_TESTS)
     gtest_discover_tests(tests)
 endif()
 
+add_subdirectory(external/boost EXCLUDE_FROM_ALL)
+
 add_library(skeletonlib STATIC src/skeletonlib.cpp include/skeleton/lib.hpp)
 target_include_directories(skeletonlib PUBLIC include)
 target_compile_features(skeletonlib PUBLIC cxx_std_17)
 
 add_executable(skeleton apps/skeleton.cpp)
-target_link_libraries(skeleton PUBLIC skeletonlib)
+target_link_libraries(skeleton PUBLIC skeletonlib Boost::algorithm)
 
