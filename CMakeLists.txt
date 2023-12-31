@@ -20,12 +20,14 @@ if (PACKAGE_TESTS)
     gtest_discover_tests(tests)
 endif()
 
-add_subdirectory(external/boost EXCLUDE_FROM_ALL)
+find_package(Boost)
+message(STATUS "Boost version: ${Boost_VERSION}")
+message(STATUS "Boost_INCLUDE_DIRS=${Boost_INCLUDE_DIRS}")
 
 add_library(skeletonlib STATIC src/skeletonlib.cpp include/skeleton/lib.hpp)
-target_include_directories(skeletonlib PUBLIC include)
+target_include_directories(skeletonlib PUBLIC include ${Boost_INCLUDE_DIR})
 target_compile_features(skeletonlib PUBLIC cxx_std_17)
 
 add_executable(skeleton apps/skeleton.cpp)
-target_link_libraries(skeleton PUBLIC skeletonlib Boost::algorithm)
+target_link_libraries(skeleton PUBLIC skeletonlib)
 

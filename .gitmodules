@@ -3,8 +3,3 @@
 	url = https://github.com/google/googletest
 	branch = v1.14.x
 	update = rebase
-[submodule "external/boost"]
-	path = external/boost
-	url = https://github.com/boostorg/boost
-	branch = boost-1.84.0 
-	update = rebase
